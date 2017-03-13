@@ -19,6 +19,7 @@ file_path = fp["mysql"]["file_path"]
 
 # Extracting data from .docx files and saving them in .txt files within the dirs
 for year in years:
+    print("Opening directory " + year + "...")
     path = file_path + year + '/'
     dirs = os.listdir(path)
 
@@ -26,7 +27,9 @@ for year in years:
         extension = os.path.splitext(files)[1]
         if  extension == '.docx' in files:
             file_name = os.path.splitext(files)[0]
+            print("Extracting file data for " + files)
             f = open(path + file_name + '.txt' , 'w')
             text = textract.process(path + files).decode("utf-8")
             f.write(text)
 f.close()
+print("File conversion complete.")
