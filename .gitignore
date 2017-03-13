@@ -1,0 +1,5 @@
+*.yml
+*.docx
+*.doc
+.DS_Store
+20*
