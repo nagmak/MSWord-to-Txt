@@ -25,7 +25,7 @@ for year in years:
 
     for files in dirs:
         extension = os.path.splitext(files)[1]
-        if  extension == '.docx' in files:
+        if  extension == '.doc' or extension == '.docx' in files:
             file_name = os.path.splitext(files)[0]
             print("Extracting file data for " + files)
             f = open(path + file_name + '.txt' , 'w')
